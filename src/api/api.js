@@ -1,0 +1,21 @@
+
+import axios from "axios";
+
+export async function fetchData(res) {
+  res = await axios("http://127.0.0.1:8000/products");
+
+  return res;
+}
+export async function fetchDat2a(result, error ) {
+  
+  axios.get("http://127.0.0.1:8000/products")
+// }
+  .then(function (response) {
+    // handle success
+    result = response
+  })
+  .catch(function (error) {
+    // handle error
+    error = error
+    console.log(error);
+  })}
