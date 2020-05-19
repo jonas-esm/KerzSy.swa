@@ -41,6 +41,7 @@ import { fetchSearchResults } from "./reducers/actions";
 import Allpp from "./pages/AllPP";
 // import withFormik from './pages/withFormik'
 import Form from "./Login";
+import SizeChart from "./pages/SizeChart";
 // import { AirlineSeatIndividualSuiteSharp } from "@material-ui/icons";
 const drawerWidth = 160;
 const useStyles = makeStyles((theme: Theme) =>
@@ -77,7 +78,7 @@ const useStyles = makeStyles((theme: Theme) =>
     drawerPaper: {
       width: drawerWidth,
       // backgroundColor: "brown",
-      backgroundColor: "rgb(64, 0, 160)",
+      backgroundColor: "#8F4556",
 
     },
     drawerHeader: {
@@ -189,7 +190,7 @@ function ResponsiveDrawer(props) {
                     </span>
                     <img
                       className={classes.logo}
-                      src="https://i.imgur.com/8piHX31.png"
+                      src="https://i.imgur.com/C8Hhkwi.png"
                     />
                 </Grid>
                
@@ -217,7 +218,7 @@ function ResponsiveDrawer(props) {
                      >
                     <Link style={{ paddingTop: "10px" }} to="/login">
                       <IconButton>
-                        <AccountCircleIcon style={{ fill: "rgb(64, 0, 160)" }} />
+                        <AccountCircleIcon style={{ fill: "#DD766F" }} />
                       </IconButton>
                     </Link></span>
                     </Grid> 
@@ -340,6 +341,9 @@ function ResponsiveDrawer(props) {
                 </Route>
                 <Route path="/orderConfirmation/review">
                 <Home />
+                </Route>
+                <Route path="/size-chart">
+                <SizeChart />
                 </Route>
             </Switch>
           </main>

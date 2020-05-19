@@ -23,7 +23,9 @@ export default function Allpp (props) {
          fetchData().then((res) => {
        
         setProducts([...res.data.data])
-        setLoading(false);})}
+        setLoading(false);}).catch(err => {
+          console.log(err)
+        })}
       }, [products, loading]);
       // if(products.length <= 1)
       if(loading)

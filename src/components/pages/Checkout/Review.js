@@ -157,7 +157,7 @@ function Review(Props) {
                     barcode: {item.products.barcode}
                   </span>
                   <span style={{ margin: "10px" }}>الكمية:{item.quantity}</span>
-                  <span style={{ margin: "10px" }}>المقاس:</span>
+                  <span style={{ margin: "10px" }}>المقاس:{item.size}</span>
                   <span style={{ margin: "10px" }}>
                     سعر القطعة:{item.products.product_price}
                   </span>
@@ -197,7 +197,9 @@ function Review(Props) {
     setSending(true);
     axios({
       method: "POST",
-      url: "http://localhost:8000/send",
+      // url: "http://localhost:8000/send",
+      url: "https://kerz-sy-api.herokuapp.com/send",
+
       data: {
         name: "this.state.name",
         email: "this.state.email",

@@ -10,11 +10,12 @@ import {
   RECIVED_SEARCH_RESULT,
 } from "./types";
 
-export const addToCart = (productInfo, quantity) => {
+export const addToCart = (productInfo, quantity , size) => {
   return {
     type: ADD_TO_CART,
     productInfo,
     quantity,
+    size
   };
 };
 export const rmFromCart = (index) => {
@@ -79,7 +80,8 @@ export function fetchSearchResults(query) {
   return function (dispatch) {
     console.log("req will be made");
     dispatch(requestSearch(query));
-    const searchUrl = `http://127.0.0.1:8000/search/`;
+    const searchUrl2 = `https://127.0.0.1:8000/search/`;
+    const searchUrl = `https://kerz-sy-api.herokuapp.com/search/`;
 
     axios
       .post(searchUrl, query, { params: { query } })
@@ -136,7 +138,7 @@ function responseLogin (payload) {
 export function fetchSignUp(values) {
 return function(dispatch) {
   dispatch(requestSignUp(values))
-  const Url = "http://127.0.0.1:8000/user/signup";
+  const Url = "https://127.0.0.1:8000/user/signup";
   axios
     .post(Url, values)
     .then((res) => {
@@ -159,7 +161,7 @@ return function(dispatch) {
 export function fetchLogin(values) {
   return function(dispatch) {
     dispatch(requestLogin(values))
-    const Url = "http://127.0.0.1:8000/user/login";
+    const Url = "https://127.0.0.1:8000/user/login";
     axios
       .post(Url, values)
       .then((res) => {

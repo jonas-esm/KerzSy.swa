@@ -42,7 +42,7 @@ function Cart(Props) {
             <TableCell>الصنف</TableCell>
             <TableCell size="small" align="right">السعر</TableCell>
             <TableCell size="small" align="right">الكمية</TableCell>
-            
+            <TableCell size="small" align="right">المقاس</TableCell>
             <TableCell size="small" align="right">Total</TableCell>
             <TableCell  size="small"align="right">الغاء</TableCell>
           </TableRow>
@@ -54,6 +54,7 @@ function Cart(Props) {
                 <TableCell size="small" component="th" scope="row"><img style={{height:'100px'}} src={row.products.imgUrl} /></TableCell>
                 <TableCell align="right">{row.products.product_price}</TableCell>
                 <TableCell align="right">{row.quantity}</TableCell>
+                <TableCell align="right">{row.size}</TableCell>
                 <TableCell align="right">{row.quantity * row.products.product_price}</TableCell>
                 <TableCell align="right"><IconButton  aria-label="Delete" onClick={() => Props.rmFromCart(index)}>
                   <DeleteIcon />

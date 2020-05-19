@@ -21,6 +21,7 @@ export function cartReducers(
         },
 
         quantity: 0,
+        size:"",
       },
     ],
   },
@@ -31,7 +32,7 @@ export function cartReducers(
       return {
         cart: [
           ...state.cart,
-          { products: action.productInfo, quantity: action.quantity },
+          { products: action.productInfo, quantity: action.quantity , size: action.size },
         ],
       };
     }
